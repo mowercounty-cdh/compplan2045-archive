@@ -1,0 +1,9 @@
+{
+  "name": "compplan2045-archive",
+  "version": "1.0.0",
+  "description": "Offline mirror of compplan2045.com with cloud documents (Google Drive/Dropbox) downloaded and re-linked locally.",
+  "type": "module",
+  "scripts": {
+    "start": "node scrape.mjs"
+  }
+}

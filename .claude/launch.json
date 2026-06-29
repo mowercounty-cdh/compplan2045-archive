@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "archive",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["serve.mjs"],
+      "port": 4178
+    }
+  ]
+}
