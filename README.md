@@ -1,9 +1,27 @@
 # compplan2045.com — Offline Archive
 
-A self-contained offline mirror of **https://www.compplan2045.com** (the Austin /
+A self-contained mirror of **https://www.compplan2045.com** (the Austin /
 Mower County 2045 Comprehensive Plan site, built on Squarespace), with all embedded
 cloud documents (Google Drive, Dropbox, etc.) downloaded locally and re-linked so the
-archive works without internet access.
+archive is fully self-contained.
+
+## 🌐 Live site
+
+**https://mowercounty-cdh.github.io/compplan2045-archive/**
+
+Published via GitHub Pages from the `docs/` folder on the `main` branch. To refresh it
+after re-running the scraper, just commit and push `docs/` — Pages rebuilds
+automatically.
+
+## ⚠️ Viewing the files directly (file://) does NOT work
+
+If you double-click `docs/index.html`, the page renders **unstyled**. This is not a bug
+in the archive — Chrome blocks Squarespace's scripts under the `file://` protocol with a
+*"from origin 'null' has been blocked by CORS policy"* error, which cascades into the CSS
+not applying. **You must view it over HTTP(S).** Two ways:
+
+- **Online:** use the GitHub Pages URL above.
+- **Locally:** run `node serve.mjs` and open `http://localhost:4178`.
 
 ## Run it
 
@@ -28,7 +46,7 @@ skipped/cached, so you can re-run anytime to refresh.
    - asset links → `_assets/…`
    - cloud document links → `_files/…`
 
-## Output layout (`./site/`)
+## Output layout (`./docs/`)
 
 | Path | Contents |
 |------|----------|
@@ -37,7 +55,8 @@ skipped/cached, so you can re-run anytime to refresh.
 | `_files/google-drive/<id>__<name>` | Documents pulled out of Google Drive |
 | `_archive-report.json` | Full manifest of pages, assets, cloud docs, and any errors |
 
-Open **`site/index.html`** in a browser to browse the archive offline.
+To browse the archive, use the live URL or `node serve.mjs` (see above) — not by opening
+the file directly.
 
 ## Cloud documents recovered (Google Drive → local PDFs)
 
